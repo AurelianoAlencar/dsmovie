@@ -1,5 +1,4 @@
 package com.devsuperior.dsmovie.services;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +15,7 @@ public class MovieService {
 	private MovieRepository repository;
      
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAll(Pageable pageable) {
+	public Page <MovieDTO> findAll(Pageable pageable) {
 		Page<Movie> result = repository.findAll(pageable);
 		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
 		return page;

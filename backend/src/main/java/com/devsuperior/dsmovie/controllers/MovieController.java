@@ -14,15 +14,14 @@ import com.devsuperior.dsmovie.services.MovieService;
 @RestController
 @RequestMapping(value = "/movies")
 public class MovieController {
-	
-	@Autowired
+		@Autowired
 	private MovieService service;
 	
 	@GetMapping
 	public Page<MovieDTO> findAll(Pageable pegeable){
-		
+	
 		return service.findAll(pegeable);
-	}
+	} 
 	
 	@GetMapping(value = "/{id}")
 	public MovieDTO findById(@PathVariable Long  id){
@@ -31,4 +30,8 @@ public class MovieController {
 	}
 
 
+	
 }
+
+
+
